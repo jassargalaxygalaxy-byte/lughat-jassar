@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لغة مشفرة خاصة من جسار</title>
+</head>
+
+<body>
+
+<div id="login">
+    <h2>🔐 لغة مشفرة خاصة من جسار</h2>
+
+    <p>أدخل كلمة السر:</p>
+
+    <input type="password" id="password" placeholder="كلمة السر">
+    <button onclick="checkPassword()">تأكيد</button>
+
+    <p id="error" style="color:red;"></p>
+</div>
+
+<div id="list" style="display:none;">
+    <h2>📜 قائمة الاختصارات</h2>
+
+    <ul>
+        <li>انا بروح العب سوني ➜ ياخي ذا كريه نبي نصرفه</li>
+        <li>ف ➜ ليه</li>
+        <li>حتا انا ➜ انا بكلم الحمام</li>
+        <li>نتيم عليه ➜ سمكه خرجت من الحوض</li>
+        <li>حقدنا عليه ➜ broo</li>
+        <li>كلمني خاص ➜ ول</li>
+        <li>تراه غشاشش ➜ عين</li>
+        <li>يلعب لعب وصخ ➜ نام</li>
+        <li>تراه خاروف او يخرفن ➜ يا غنماتي</li>
+        <li>ترا كذاب ➜ انا كذاب</li>
+    </ul>
+
+    <button onclick="logout()">تسجيل خروج</button>
+</div>
+
+<script>
+function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "جسار محمد") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("list").style.display = "block";
+    } else {
+        document.getElementById("error").textContent =
+            "❌ كلمة السر غير صحيحة";
+    }
+}
+
+function logout() {
+    document.getElementById("list").style.display = "none";
+    document.getElementById("login").style.display = "block";
+    document.getElementById("password").value = "";
+    document.getElementById("error").textContent = "";
+}
+</script>
+
+</body>
+</html>
